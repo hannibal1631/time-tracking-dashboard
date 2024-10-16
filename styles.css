@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+:root {
+  /* Primary */
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red-work: hsl(15, 100%, 70%);
+  --Soft-blue-play: hsl(195, 74%, 62%);
+  --Light-red-study: hsl(348, 100%, 68%);
+  --Lime-green-exercise: hsl(145, 58%, 55%);
+  --Violet-social: hsl(264, 64%, 52%);
+  --Soft-orange-self-care: hsl(43, 84%, 65%);
+
+  /* Neutral */
+
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Rubik';
+  background: var(--Very-dark-blue);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 30px 30px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'profile-card work play study'
+    'profile-card exercise socials self-care';
+  width: 1000px;
+  height: 475px;
+}
+
+/* profile-card styles here */
+
+.profile-card {
+  background: var(--Dark-blue);
+  grid-area: profile-card;
+  height: 100%;
+  border-radius: 15px;
+}
+.name-card {
+  background: var(--Blue);
+  border-radius: 15px;
+  padding: 30px;
+  height: 70%;
+}
+.profile-pic {
+  width: 75px;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-bottom: 35px;
+}
+.name-card > p {
+  font-size: 14px;
+  color: var(--Pale-Blue);
+}
+.profile-name {
+  font-weight: 300;
+  font-size: 35px;
+}
+.duration-card {
+  padding: 20px 30px 30px 30px;
+  height: 30%;
+  line-height: 35px;
+}
+.duration-card > h3 {
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--Desaturated-blue);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+.duration-card > h3:hover {
+  color: white;
+}
+.duration-card > .active {
+  color: white;
+}
+/*data-card styles here */
+
+.work {
+  grid-area: work;
+  background: var(--Light-red-work);
+}
+
+.play {
+  grid-area: play;
+  background: var(--Soft-blue-play);
+}
+
+.study {
+  grid-area: study;
+  background: var(--Light-red-study);
+}
+
+.exercise {
+  grid-area: exercise;
+  background: var(--Lime-green-exercise);
+}
+
+.socials {
+  grid-area: socials;
+  background: var(--Violet-social);
+}
+
+.self-care {
+  grid-area: self-care;
+  background: var(--Soft-orange-self-care);
+}
+
+.data-card {
+  border-radius: 15px;
+  height: 223px;
+}
+.img-div {
+  display: flex;
+  justify-content: flex-end;
+  height: 18%;
+  padding: 0px 20px;
+  overflow: hidden;
+}
+.img-div > img {
+  transform: scale(1.3);
+}
+
+.data-div {
+  background: var(--Dark-blue);
+  padding: 30px;
+  height: 83%;
+  border-radius: 15px;
+}
+.data-div:hover {
+  background: hsl(235, 44%, 32%);
+}
+.data-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.data-header > h3 {
+  font-size: 16px;
+  font-weight: 500;
+}
+.data-header > img {
+  height: 4px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.data-header > img:hover {
+  height: 5px;
+}
+.duration {
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+.previous-data {
+  font-size: 13px;
+  font-weight: 400;
+  color: var(--Pale-Blue);
+}
+
+/* media responsiveness */
+@media (max-width: 575px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    width: 475px;
+  }
+  .duration-card {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+}
